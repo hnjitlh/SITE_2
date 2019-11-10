@@ -1,0 +1,36 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+$enable-gradients: true;
+
+$theme-colors: (
+);
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slideIn {
+  transform: scale(0.9) translateY(40%);
+  transition: all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  opacity: 0;
+}
+
+.slideIn.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.bg-default {
+  background-image: linear-gradient(to right, rgba(0,212,255,1) 0%, rgba(217,0,168,1) 100%);
+}
+
+@import "bootstrap/scss/bootstrap";
