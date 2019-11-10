@@ -1,5 +1,6 @@
 from app import db
 from datetime import datetime
+from .Messages import Message
 
 
 class ReminderEntry(db.Model):
@@ -9,7 +10,7 @@ class ReminderEntry(db.Model):
     time = db.column(db.DateTime)
 
     def get_message(self):
-        pass
+        return Message.query.filter_by(msg_id=self.message).first()
 
     def find_date_diff(self):
         return (datetime.utcnow() - self.time).days
